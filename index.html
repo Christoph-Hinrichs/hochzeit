@@ -7,26 +7,87 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lora:wght@400;500&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #f8f6f0; /* Leichtes Papier-Weiß/Beige */
+            --bg-color: #f8f6f0;
             --text-main: #333333;
-            --accent-green: #2e5c31; /* Angelehnt an die Bananenblätter */
-            --accent-orange: #d37c22; /* Angelehnt an die Ringelblumen */
+            --accent-green: #2e5c31;
+            --accent-orange: #d37c22;
+            --nav-bg: rgba(248, 246, 240, 0.95);
         }
         
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             background-color: var(--bg-color);
-            background-image: url('https://www.transparenttextures.com/patterns/cream-paper.png'); /* Leichte Papiertextur */
+            background-image: url('https://www.transparenttextures.com/patterns/cream-paper.png');
             color: var(--text-main);
             font-family: 'Lora', serif;
             margin: 0;
             padding: 0;
+            padding-top: 70px; /* Space for the fixed navbar */
             line-height: 1.6;
         }
 
+        /* --- STICKY NAVBAR --- */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--nav-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px 20px;
+            box-sizing: border-box;
+            backdrop-filter: blur(5px);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent-orange);
+        }
+
+        .lang-btn {
+            position: absolute;
+            right: 20px;
+            background: transparent;
+            border: 1px solid var(--accent-green);
+            color: var(--accent-green);
+            padding: 5px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-family: 'Lora', serif;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .lang-btn:hover {
+            background: var(--accent-green);
+            color: white;
+        }
+
+        /* --- MAIN CONTENT --- */
         .container {
             max-width: 800px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 20px;
             text-align: center;
         }
 
@@ -36,12 +97,10 @@
         }
 
         .hero {
-            padding: 60px 0;
+            padding: 40px 0 60px 0;
             border-bottom: 1px solid #ccc;
-            position: relative;
         }
 
-        /* Dekorative Elemente als Platzhalter für eure Bilder */
         .decor-top { font-size: 2rem; color: var(--accent-orange); margin-bottom: 20px; }
         .decor-leaves { font-size: 3rem; color: var(--accent-green); margin-top: 20px; }
 
@@ -66,7 +125,7 @@
         }
 
         .section {
-            padding: 40px 0;
+            padding: 60px 0;
             border-bottom: 1px solid #ddd;
             text-align: left;
         }
@@ -101,7 +160,7 @@
         
         .btn {
             display: inline-block;
-            background-color: #25D366; /* WhatsApp Grün */
+            background-color: #25D366;
             color: white;
             padding: 12px 24px;
             text-decoration: none;
@@ -119,76 +178,165 @@
             padding: 40px 0;
             font-size: 0.9rem;
         }
+
+        /* Mobile Adjustments for Navbar */
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+                padding: 10px;
+            }
+            .lang-btn {
+                position: static;
+                margin-top: 10px;
+            }
+            body { padding-top: 100px; }
+        }
     </style>
 </head>
 <body>
 
+<!-- STICKY NAVBAR -->
+<nav>
+    <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#schedule"><span data-lang="de">Ablauf</span><span data-lang="en">Schedule</span></a>
+        <a href="#info"><span data-lang="de">Infos</span><span data-lang="en">Info</span></a>
+        <a href="#rsvp">RSVP</a>
+    </div>
+    <button class="lang-btn" onclick="toggleLanguage()" id="langBtn">EN | Switch to English</button>
+</nav>
+
 <div class="container">
     
     <!-- HEADER BEREICH -->
-    <div class="hero">
-        <div class="decor-top">🌼 🔔 🌼</div> <!-- Hier könnt ihr später die Blumengirlanden aus eurem Bild einfügen -->
+    <div class="hero" id="home">
+        <div class="decor-top">🌼 🔔 🌼</div>
         <p>— SAVE <i>the</i> DATE —</p>
         <h1>Christoph <br>&<br> Manasi</h1>
-        <p class="subtitle">are tying the knot</p>
-        <p>— Come celebrate with us —</p>
+        <p class="subtitle">
+            <span data-lang="de">Wir heiraten!</span>
+            <span data-lang="en">are tying the knot</span>
+        </p>
+        <p>
+            <span data-lang="de">— Feiert mit uns —</span>
+            <span data-lang="en">— Come celebrate with us —</span>
+        </p>
         <div class="date">26 · 27 · 28 FEBRUARY 2027</div>
-        <div class="decor-leaves">🌿 🌿</div> <!-- Platzhalter für Bananenblätter -->
+        <p><i>Details to follow</i></p>
+        <div class="decor-leaves">🌿 🌿</div>
     </div>
 
     <!-- ABLAUF DER HOCHZEIT -->
-    <div class="section">
-        <h2 class="section-title">Der Ablauf & Locations</h2>
-        <p>Eine indische Hochzeit ist ein farbenfrohes Fest, das sich über mehrere Tage erstreckt. Hier ist ein Überblick über unsere Feierlichkeiten:</p>
+    <div class="section" id="schedule">
+        <h2 class="section-title">
+            <span data-lang="de">Der Ablauf & Locations</span>
+            <span data-lang="en">Schedule & Locations</span>
+        </h2>
+        <p>
+            <span data-lang="de">Eine indische Hochzeit ist ein farbenfrohes Fest, das sich über mehrere Tage erstreckt. Hier ist ein Überblick über unsere Feierlichkeiten:</span>
+            <span data-lang="en">An Indian wedding is a colorful celebration that spans multiple days. Here is an overview of our festivities:</span>
+        </p>
         
         <div class="grid">
             <div class="card">
-                <h3>Freitag, 26. Februar: Mehndi & Sangeet</h3>
-                <p><strong>Location:</strong> [Name der Location einfügen]</p>
-                <p><strong>Zeit:</strong> 17:00 Uhr</p>
-                <p>Das Fest beginnt! Beim <em>Mehndi</em> werden die Hände der Braut (und der Gäste) mit Henna verziert. Das anschließende <em>Sangeet</em> ist ein Abend voller Musik, Tanzaufführungen der Familie und gutem Essen. Kommt bereit zu tanzen!</p>
+                <h3>
+                    <span data-lang="de">Freitag, 26. Februar: Mehndi & Sangeet</span>
+                    <span data-lang="en">Friday, Feb 26: Mehndi & Sangeet</span>
+                </h3>
+                <p><strong>Location:</strong> [Location Name]</p>
+                <p><strong>Time:</strong> 17:00</p>
+                <p>
+                    <span data-lang="de">Das Fest beginnt! Beim <em>Mehndi</em> werden die Hände der Braut mit Henna verziert. Das <em>Sangeet</em> ist ein Abend voller Musik, Tanzaufführungen und gutem Essen. Kommt bereit zu tanzen!</span>
+                    <span data-lang="en">The festivities begin! During <em>Mehndi</em>, the bride's hands are adorned with henna. The <em>Sangeet</em> is an evening full of music, dance performances, and great food. Get ready to dance!</span>
+                </p>
             </div>
             <div class="card">
-                <h3>Samstag, 27. Februar: Haldi</h3>
-                <p><strong>Location:</strong> [Name der Location einfügen]</p>
-                <p><strong>Zeit:</strong> 10:00 Uhr</p>
-                <p>Eine intime Zeremonie am Morgen. Braut und Bräutigam werden mit einer Paste aus Kurkuma (Haldi), Öl und Wasser gesegnet. Dies soll die Haut zum Strahlen bringen und böse Geister fernhalten.</p>
+                <h3>
+                    <span data-lang="de">Samstag, 27. Februar: Haldi</span>
+                    <span data-lang="en">Saturday, Feb 27: Haldi</span>
+                </h3>
+                <p><strong>Location:</strong> [Location Name]</p>
+                <p><strong>Time:</strong> 10:00</p>
+                <p>
+                    <span data-lang="de">Eine intime Zeremonie am Morgen. Braut und Bräutigam werden mit einer Paste aus Kurkuma (Haldi) gesegnet. Dies soll die Haut zum Strahlen bringen und böse Geister fernhalten.</span>
+                    <span data-lang="en">An intimate morning ceremony. The bride and groom are blessed with a paste made of turmeric (Haldi). This is meant to make their skin glow and ward off evil spirits.</span>
+                </p>
             </div>
             <div class="card">
-                <h3>Sonntag, 28. Februar: Baraat & Vivah (Die Hochzeit)</h3>
-                <p><strong>Location:</strong> [Name der Location einfügen]</p>
-                <p><strong>Zeit:</strong> 14:00 Uhr</p>
-                <p>Der <em>Baraat</em> ist der feierliche, tanzende Einzug des Bräutigams. Danach folgt die eigentliche Trauungszeremonie (<em>Vivah</em>) unter dem Hochzeitsbaldachin (Mandap), wo das Paar sieben Schritte um das heilige Feuer geht.</p>
+                <h3>
+                    <span data-lang="de">Sonntag, 28. Februar: Baraat & Vivah</span>
+                    <span data-lang="en">Sunday, Feb 28: Baraat & Vivah</span>
+                </h3>
+                <p><strong>Location:</strong> [Location Name]</p>
+                <p><strong>Time:</strong> 14:00</p>
+                <p>
+                    <span data-lang="de">Der <em>Baraat</em> ist der feierliche, tanzende Einzug des Bräutigams. Danach folgt die eigentliche Trauungszeremonie (<em>Vivah</em>) unter dem Hochzeitsbaldachin (Mandap).</span>
+                    <span data-lang="en">The <em>Baraat</em> is the groom's festive, dancing procession. This is followed by the actual wedding ceremony (<em>Vivah</em>) under the wedding canopy (Mandap).</span>
+                </p>
             </div>
             <div class="card">
-                <h3>Sonntag, 28. Februar: Reception (Empfang)</h3>
-                <p><strong>Location:</strong> [Name der Location einfügen]</p>
-                <p><strong>Zeit:</strong> 19:00 Uhr</p>
-                <p>Der krönende Abschluss! Ein formelles Abendessen mit Reden, Musik und einer großen Party, um unser gemeinsames Leben zu feiern.</p>
+                <h3>
+                    <span data-lang="de">Sonntag, 28. Februar: Reception</span>
+                    <span data-lang="en">Sunday, Feb 28: Reception</span>
+                </h3>
+                <p><strong>Location:</strong> [Location Name]</p>
+                <p><strong>Time:</strong> 19:00</p>
+                <p>
+                    <span data-lang="de">Der krönende Abschluss! Ein formelles Abendessen mit Reden, Musik und einer großen Party, um unser gemeinsames Leben zu feiern.</span>
+                    <span data-lang="en">The grand finale! A formal dinner with speeches, music, and a huge party to celebrate our life together.</span>
+                </p>
             </div>
         </div>
     </div>
 
     <!-- KULTURELLE DOS & DON'TS -->
-    <div class="section">
-        <h2 class="section-title">Gut zu wissen: Dos & Don'ts</h2>
-        <p>Für viele unserer Gäste ist es vielleicht die erste indische Hochzeit. Hier sind ein paar Tipps, damit ihr euch rundum wohlfühlt:</p>
+    <div class="section" id="info">
+        <h2 class="section-title">
+            <span data-lang="de">Gut zu wissen: Dos & Don'ts</span>
+            <span data-lang="en">Good to know: Dos & Don'ts</span>
+        </h2>
+        <p>
+            <span data-lang="de">Für viele unserer Gäste ist es vielleicht die erste indische Hochzeit. Hier sind ein paar Tipps:</span>
+            <span data-lang="en">For many of our guests, this might be their first Indian wedding. Here are a few tips:</span>
+        </p>
         
         <div class="grid">
             <div class="card">
-                <h3>Kleidung (Dresscode)</h3>
+                <h3>
+                    <span data-lang="de">Kleidung</span>
+                    <span data-lang="en">Attire</span>
+                </h3>
                 <ul>
-                    <li><strong>Do:</strong> Tragt farbenfrohe Kleidung! Indische Outfits (Lehengas, Kurtas) sind sehr willkommen, aber festliche westliche Kleidung ist genauso perfekt.</li>
-                    <li><strong>Do:</strong> Bedeckt Schultern und Knie, wenn ihr euch während der Hauptzeremonie im Mandap-Bereich aufhaltet.</li>
-                    <li><strong>Don't:</strong> Vermeidet es, komplett in <strong>Rot</strong> zu erscheinen (dies ist traditionell die Farbe der Braut) sowie komplett in Weiß oder Schwarz, da diese Farben in Indien oft mit Trauer assoziiert werden.</li>
+                    <li><strong>Do:</strong> 
+                        <span data-lang="de">Tragt farbenfrohe Kleidung! Indische Outfits oder festliche westliche Kleidung sind perfekt.</span>
+                        <span data-lang="en">Wear colorful clothes! Indian outfits or formal Western attire are perfect.</span>
+                    </li>
+                    <li><strong>Don't:</strong> 
+                        <span data-lang="de">Vermeidet es, komplett in <strong>Rot</strong>, Weiß oder Schwarz zu erscheinen.</span>
+                        <span data-lang="en">Avoid wearing completely <strong>red</strong>, white, or black.</span>
+                    </li>
                 </ul>
             </div>
             <div class="card">
-                <h3>Etikette & Verhalten</h3>
+                <h3>
+                    <span data-lang="de">Etikette</span>
+                    <span data-lang="en">Etiquette</span>
+                </h3>
                 <ul>
-                    <li><strong>Schuhe:</strong> Bevor man den Mandap (den Traualtar) betritt, müssen die Schuhe aus Respekt ausgezogen werden.</li>
-                    <li><strong>Geschenke:</strong> Wenn ihr uns etwas schenken möchtet, sind traditionell Geldgeschenke in Umschlägen üblich (sogenanntes "Shagun"). Um Glück zu bringen, endet der Betrag immer auf eine 1 (z.B. 51€, 101€). Bitte bringt keine verpackten Kartons (Box-Gifts) mit.</li>
-                    <li><strong>Essen:</strong> Bei einigen traditionellen Zeremonien wird ausschließlich vegetarisches Essen serviert. Am Abend beim Empfang wird es ein buntes Buffet geben.</li>
+                    <li><strong>
+                        <span data-lang="de">Schuhe:</span>
+                        <span data-lang="en">Shoes:</span>
+                    </strong> 
+                        <span data-lang="de">Bevor man den Mandap (Traualtar) betritt, müssen die Schuhe aus Respekt ausgezogen werden.</span>
+                        <span data-lang="en">Before entering the Mandap (wedding altar), shoes must be taken off out of respect.</span>
+                    </li>
+                    <li><strong>
+                        <span data-lang="de">Geschenke:</span>
+                        <span data-lang="en">Gifts:</span>
+                    </strong> 
+                        <span data-lang="de">Geldgeschenke in Umschlägen sind üblich. Der Betrag endet traditionell auf eine 1 (z.B. 51€).</span>
+                        <span data-lang="en">Monetary gifts in envelopes are customary. The amount traditionally ends in a 1 (e.g., 51€, 101€).</span>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -197,21 +345,62 @@
     <!-- RSVP BEREICH -->
     <div class="section" id="rsvp" style="text-align: center;">
         <h2 class="section-title">RSVP</h2>
-        <p>Wir freuen uns darauf, diesen besonderen Tag mit euch zu verbringen!</p>
-        <p>Gemäß der Einladung bitten wir euch, uns bis zum <strong>31.05.2026</strong> Bescheid zu geben, ob ihr kommen könnt.</p>
+        <p>
+            <span data-lang="de">Wir freuen uns darauf, diesen besonderen Tag mit euch zu verbringen! Bitte gebt uns bis zum <strong>31.05.2026</strong> Bescheid.</span>
+            <span data-lang="en">We look forward to spending this special day with you! Please let us know if you can make it by <strong>May 31, 2026</strong>.</span>
+        </p>
         
-        <!-- Ersetze die Telefonnummer mit eurer eigenen (im internationalen Format ohne das + oder 00) -->
-        <a href="https://wa.me/4915112345678?text=Hallo%20Christoph%20und%20Manasi!%20Wir%20freuen%20uns%20sehr%20auf%20eure%20Hochzeit.%20Wir%20nehmen%20gerne%20teil%20(Name/n:%20...)" target="_blank" class="btn">
-            Auf WhatsApp zusagen
+        <a href="https://wa.me/4915112345678" target="_blank" class="btn">
+            <span data-lang="de">Auf WhatsApp zusagen</span>
+            <span data-lang="en">Confirm on WhatsApp</span>
         </a>
     </div>
 
     <!-- FOOTER -->
     <div class="footer">
-        <p>Mit Liebe, Christoph & Manasi</p>
+        <p>
+            <span data-lang="de">Mit Liebe, Christoph & Manasi</span>
+            <span data-lang="en">With love, Christoph & Manasi</span>
+        </p>
     </div>
 
 </div>
+
+<!-- JAVASCRIPT FOR LANGUAGE TOGGLE -->
+<script>
+    let currentLang = 'de';
+
+    function toggleLanguage() {
+        // Toggle language variable
+        currentLang = currentLang === 'de' ? 'en' : 'de';
+        
+        // Update button text
+        const btn = document.getElementById('langBtn');
+        if(currentLang === 'de') {
+            btn.innerHTML = 'EN | Switch to English';
+            document.documentElement.lang = 'de';
+        } else {
+            btn.innerHTML = 'DE | Auf Deutsch wechseln';
+            document.documentElement.lang = 'en';
+        }
+
+        // Show/Hide text based on language
+        document.querySelectorAll('[data-lang="de"]').forEach(el => {
+            el.style.display = currentLang === 'de' ? '' : 'none';
+        });
+        
+        document.querySelectorAll('[data-lang="en"]').forEach(el => {
+            el.style.display = currentLang === 'en' ? '' : 'none';
+        });
+    }
+
+    // Initialize: Hide English text on first load
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('[data-lang="en"]').forEach(el => {
+            el.style.display = 'none';
+        });
+    });
+</script>
 
 </body>
 </html>
