@@ -1,315 +1,217 @@
 <!DOCTYPE html>
-
-<html lang="en">
-
+<html lang="de">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christoph & Manasi - Wedding</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f8f6f0; /* Leichtes Papier-Weiß/Beige */
+            --text-main: #333333;
+            --accent-green: #2e5c31; /* Angelehnt an die Bananenblätter */
+            --accent-orange: #d37c22; /* Angelehnt an die Ringelblumen */
+        }
+        
+        body {
+            background-color: var(--bg-color);
+            background-image: url('https://www.transparenttextures.com/patterns/cream-paper.png'); /* Leichte Papiertextur */
+            color: var(--text-main);
+            font-family: 'Lora', serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
 
-<meta charset="UTF-8">
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
 
-<title>Emma & Christoph</title>
+        .hero {
+            padding: 60px 0;
+            border-bottom: 1px solid #ccc;
+            position: relative;
+        }
 
- 
+        /* Dekorative Elemente als Platzhalter für eure Bilder */
+        .decor-top { font-size: 2rem; color: var(--accent-orange); margin-bottom: 20px; }
+        .decor-leaves { font-size: 3rem; color: var(--accent-green); margin-top: 20px; }
 
-<script src=tailwindcss.comscript>
+        .hero h1 {
+            font-size: 3rem;
+            letter-spacing: 2px;
+            margin: 10px 0;
+            text-transform: uppercase;
+        }
 
- 
+        .hero p.subtitle {
+            font-style: italic;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
 
-<link rel="preconnect"is.com
+        .date {
+            font-weight: bold;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+            margin: 20px 0;
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300play=swap
+        .section {
+            padding: 40px 0;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
 
- 
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: var(--accent-green);
+        }
 
-<style>
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
 
-.font-heading {
+        @media (min-width: 600px) {
+            .grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
 
-font-family: 'Playfair Display', serif;
+        .card {
+            background: rgba(255, 255, 255, 0.6);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
 
-}
+        ul { padding-left: 20px; }
+        
+        .btn {
+            display: inline-block;
+            background-color: #25D366; /* WhatsApp Grün */
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-family: 'Playfair Display', serif;
+            margin-top: 20px;
+            transition: background 0.3s;
+        }
 
- 
+        .btn:hover { background-color: #1ebe57; }
 
-.font-body {
-
-font-family: 'Montserrat', sans-serif;
-
-}
-
-</style>
-
+        .footer {
+            text-align: center;
+            padding: 40px 0;
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
+<body>
 
-<body class="font-body bg-stone-50 text-stone-800">
+<div class="container">
+    
+    <!-- HEADER BEREICH -->
+    <div class="hero">
+        <div class="decor-top">🌼 🔔 🌼</div> <!-- Hier könnt ihr später die Blumengirlanden aus eurem Bild einfügen -->
+        <p>— SAVE <i>the</i> DATE —</p>
+        <h1>Christoph <br>&<br> Manasi</h1>
+        <p class="subtitle">are tying the knot</p>
+        <p>— Come celebrate with us —</p>
+        <div class="date">26 · 27 · 28 FEBRUARY 2027</div>
+        <div class="decor-leaves">🌿 🌿</div> <!-- Platzhalter für Bananenblätter -->
+    </div>
 
- 
+    <!-- ABLAUF DER HOCHZEIT -->
+    <div class="section">
+        <h2 class="section-title">Der Ablauf & Locations</h2>
+        <p>Eine indische Hochzeit ist ein farbenfrohes Fest, das sich über mehrere Tage erstreckt. Hier ist ein Überblick über unsere Feierlichkeiten:</p>
+        
+        <div class="grid">
+            <div class="card">
+                <h3>Freitag, 26. Februar: Mehndi & Sangeet</h3>
+                <p><strong>Location:</strong> [Name der Location einfügen]</p>
+                <p><strong>Zeit:</strong> 17:00 Uhr</p>
+                <p>Das Fest beginnt! Beim <em>Mehndi</em> werden die Hände der Braut (und der Gäste) mit Henna verziert. Das anschließende <em>Sangeet</em> ist ein Abend voller Musik, Tanzaufführungen der Familie und gutem Essen. Kommt bereit zu tanzen!</p>
+            </div>
+            <div class="card">
+                <h3>Samstag, 27. Februar: Haldi</h3>
+                <p><strong>Location:</strong> [Name der Location einfügen]</p>
+                <p><strong>Zeit:</strong> 10:00 Uhr</p>
+                <p>Eine intime Zeremonie am Morgen. Braut und Bräutigam werden mit einer Paste aus Kurkuma (Haldi), Öl und Wasser gesegnet. Dies soll die Haut zum Strahlen bringen und böse Geister fernhalten.</p>
+            </div>
+            <div class="card">
+                <h3>Sonntag, 28. Februar: Baraat & Vivah (Die Hochzeit)</h3>
+                <p><strong>Location:</strong> [Name der Location einfügen]</p>
+                <p><strong>Zeit:</strong> 14:00 Uhr</p>
+                <p>Der <em>Baraat</em> ist der feierliche, tanzende Einzug des Bräutigams. Danach folgt die eigentliche Trauungszeremonie (<em>Vivah</em>) unter dem Hochzeitsbaldachin (Mandap), wo das Paar sieben Schritte um das heilige Feuer geht.</p>
+            </div>
+            <div class="card">
+                <h3>Sonntag, 28. Februar: Reception (Empfang)</h3>
+                <p><strong>Location:</strong> [Name der Location einfügen]</p>
+                <p><strong>Zeit:</strong> 19:00 Uhr</p>
+                <p>Der krönende Abschluss! Ein formelles Abendessen mit Reden, Musik und einer großen Party, um unser gemeinsames Leben zu feiern.</p>
+            </div>
+        </div>
+    </div>
 
-<!-- HERO -->
+    <!-- KULTURELLE DOS & DON'TS -->
+    <div class="section">
+        <h2 class="section-title">Gut zu wissen: Dos & Don'ts</h2>
+        <p>Für viele unserer Gäste ist es vielleicht die erste indische Hochzeit. Hier sind ein paar Tipps, damit ihr euch rundum wohlfühlt:</p>
+        
+        <div class="grid">
+            <div class="card">
+                <h3>Kleidung (Dresscode)</h3>
+                <ul>
+                    <li><strong>Do:</strong> Tragt farbenfrohe Kleidung! Indische Outfits (Lehengas, Kurtas) sind sehr willkommen, aber festliche westliche Kleidung ist genauso perfekt.</li>
+                    <li><strong>Do:</strong> Bedeckt Schultern und Knie, wenn ihr euch während der Hauptzeremonie im Mandap-Bereich aufhaltet.</li>
+                    <li><strong>Don't:</strong> Vermeidet es, komplett in <strong>Rot</strong> zu erscheinen (dies ist traditionell die Farbe der Braut) sowie komplett in Weiß oder Schwarz, da diese Farben in Indien oft mit Trauer assoziiert werden.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Etikette & Verhalten</h3>
+                <ul>
+                    <li><strong>Schuhe:</strong> Bevor man den Mandap (den Traualtar) betritt, müssen die Schuhe aus Respekt ausgezogen werden.</li>
+                    <li><strong>Geschenke:</strong> Wenn ihr uns etwas schenken möchtet, sind traditionell Geldgeschenke in Umschlägen üblich (sogenanntes "Shagun"). Um Glück zu bringen, endet der Betrag immer auf eine 1 (z.B. 51€, 101€). Bitte bringt keine verpackten Kartons (Box-Gifts) mit.</li>
+                    <li><strong>Essen:</strong> Bei einigen traditionellen Zeremonien wird ausschließlich vegetarisches Essen serviert. Am Abend beim Empfang wird es ein buntes Buffet geben.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
-<section
+    <!-- RSVP BEREICH -->
+    <div class="section" id="rsvp" style="text-align: center;">
+        <h2 class="section-title">RSVP</h2>
+        <p>Wir freuen uns darauf, diesen besonderen Tag mit euch zu verbringen!</p>
+        <p>Gemäß der Einladung bitten wir euch, uns bis zum <strong>31.05.2026</strong> Bescheid zu geben, ob ihr kommen könnt.</p>
+        
+        <!-- Ersetze die Telefonnummer mit eurer eigenen (im internationalen Format ohne das + oder 00) -->
+        <a href="https://wa.me/4915112345678?text=Hallo%20Christoph%20und%20Manasi!%20Wir%20freuen%20uns%20sehr%20auf%20eure%20Hochzeit.%20Wir%20nehmen%20gerne%20teil%20(Name/n:%20...)" target="_blank" class="btn">
+            Auf WhatsApp zusagen
+        </a>
+    </div>
 
-class="relative min-h-screen bg-cover bg-center"
-
-style="background-image:url('https://images.unsplash.com/photo-1519741497674-611481863552');"
-
-> 
-
-<div class="absolute inset-0 bg-black/35"></div>
-
- 
-
-<div class="relative z-10 flex min-h-screen items-center justify-center px-6">
-
-<div class="text-center text-white">
-
- 
-
-<p class="mb-4 tracking-[0.4em] uppercase">
-
-We're getting married
-
-</p>
-
- 
-
-<h1 class="font-heading text-6xl md:text-8xl">
-
-Emma & Christoph
-
-</h1>
-
- 
-
-<p class="mt-6 text-xl md:text-2xl">
-
-August 14, 2027
-
-</p>
-
- 
-
-<a href="#rsvp"
-
-class="mt-10 inline-block rounded-full bg-white px-8 py-4 text-stone-900 font-medium transition hover <div class="mx-auto max-w-4xl text-center">
-
- 
-
-<h2 class="font-heading text-5xl text-rose-900">
-
-Our Story
-
-</h2>
-
- 
-
-<div class="mt-8 h-px w-32 mx-auto bg-rose-300"></div>
-
- 
-
-<p class="mt-10 text-lg leading-relaxed text-stone-600">
-
-We met, laughed, travelled together and built countless
-
-beautiful memories. Now we can't wait to celebrate the
-
-beginning of our next chapter with our family and friends.
-
-</p>
-
- 
-
-</div>
-
-</section>
-
- 
-
-<!-- TIMELINE -->
-
-<section class="bg-white py-24 px-6">
-
- 
-
-<div class="mx-auto max-w-5xl">
-
- 
-
-<h2 class="font-heading text-center text-5xl text-rose-900">
-
-Wedding Day
-
-</h2>
-
- 
-
-<div class="mt-16 grid gap-8 md:grid-cols-3">
-
- 
-
-<div class="rounded-3xl bg-rose-50 p-8 text-center shadow-sm">
-
-<h3 class="font-heading text-2xl">Ceremony</h3>
-
-<p class="mt-3 text-stone-600">14:00</p>
-
-<p class="mt-4">
-
-St. Peter Church
-
-</p>
+    <!-- FOOTER -->
+    <div class="footer">
+        <p>Mit Liebe, Christoph & Manasi</p>
+    </div>
 
 </div>
-
- 
-
-<div class="rounded-3xl bg-rose-50 p-8 text-center shadow-sm">
-
-<h3 class="font-heading text-2xl">Reception</h3>
-
-<p class="mt-3 text-stone-600">16:00</p>
-
-<p class="mt-4">
-
-Rose Garden Estate
-
-</p>
-
-</div>
-
- 
-
-<div class="rounded-3xl bg-rose-50 p-8 text-center shadow-sm">
-
-<h3 class="font-heading text-2xl">Party</h3>
-
-<p class="mt-3 text-stone-600">20:00</p>
-
-<p class="mt-4">
-
-Dinner & Dancing
-
-</p>
-
-</div>
-
- 
-
-</div>
-
- 
-
-</div>
-
- 
-
-</section>
-
- 
-
-<!-- VENUE -->
-
-<section class="py-24 px-6 bg-stone-100">
-
- 
-
-<div class="mx-auto max-w-5xl grid gap-12 md:grid-cols-2 items-center">
-
- 
-
-<div>
-
-<h2 class="font-heading text-5xl text-rose-900">
-
-Venue
-
-</h2>
-
- 
-
-<p class="mt-8 text-lg leading-relaxed text-stone-600">
-
-Nestled among beautiful gardens and historic architecture,
-
-our venue offers the perfect setting to celebrate together.
-
-</p>
-
- 
-
-<p class="mt-6 font-medium">
-
-Rose Garden Estate<br>
-
-Düsseldorf, Germany
-
-</p>
-
-</div>
-
- 
-
-<div>
-
-<img
-
-src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3"
-
-altSVP -->
-
-<section id="rsvp" class="py-24 px-6 bg-rose-900 text-white">
-
- 
-
-<div class="mx-auto max-w-3xl text-center">
-
- 
-
-<h2 class="font-heading text-5xl">
-
-Join Us
-
-</h2>
-
- 
-
-<p class="mt-6 text-lg text-rose-100">
-
-We'd love to celebrate this special day with you.
-
-</p>
-
- 
-
-<button
-
-class="mt-10 rounded-full bg-white px-8 py-4 text-rose-900 font-semibold hover:bg-rose-50">
-
-Confirm Attendance
-
-</button>
-
- 
-
-</div>
-
- 
-
-</section>
-
- 
-
-<!-- FOOTER -->
-
-<footer class="py-10 text-center bg-stone-950 text-stone-400">
-
-Emma & Christoph • August 14, 2027
-
-</footer>
-
- 
 
 </body>
-
 </html>
