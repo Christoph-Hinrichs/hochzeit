@@ -87,7 +87,7 @@
         .container {
             max-width: 800px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 80px 60px 40px 60px;
             text-align: center;
         }
 
@@ -191,9 +191,29 @@
             }
             body { padding-top: 100px; }
         }
+
+        /* --- FIXED FRAME GARLAND --- */
+
+        .garland-frame {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 999; /* Sits above page content */
+            pointer-events: none; /* CRITICAL: Allows users to click buttons/links underneath the image */
+            
+            /* Relative path to your uploaded file in the GitHub repo */
+            background-image: url('orange flower frame.png'); /* Replace 'garland.png' with 'images/garland.png' if in a subfolder */
+            background-position: center top;
+            background-repeat: no-repeat;
+            background-size: 100% 100%; /* Stretches to fill the viewport frame */
+        }
     </style>
 </head>
 <body>
+
+    <div class="garland-frame"></div>
 
 <!-- STICKY NAVBAR -->
 <nav>
